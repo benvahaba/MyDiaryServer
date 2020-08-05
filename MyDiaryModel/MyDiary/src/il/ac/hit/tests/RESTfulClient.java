@@ -31,7 +31,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8085/MyDiary/user/newuser");
+                URL url = new URL("http://localhost:8080/MyDiary/user/newuser");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -126,7 +126,7 @@ public class RESTfulClient {
         String string = "";
         try {
             String email="vahababen@gmail.com";
-            String password="a1b";
+            String password="a1b2";
             String tempRetString="";
 
             JsonObject jsonObject=new JsonObject();
