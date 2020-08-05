@@ -37,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Resources_lib_for_MyDiary_Model/jars_for_Hibernate_and_mysql/slf4j-log4j12-1.5.6.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MyDiaryModel/MyDiary" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -193,6 +193,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596633578408</updated>
       <workItem from="1596633580155" duration="1721000" />
+      <workItem from="1596636170422" duration="28000" />
     </task>
     <servers />
   </component>
@@ -216,10 +217,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="907" y="388" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1596633963711" />
-    <state x="1060" y="409" key="FileChooserDialogImpl" timestamp="1596633702255">
+    <state x="1060" y="409" key="FileChooserDialogImpl" timestamp="1596636196637">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="409" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1596633702255" />
+    <state x="1060" y="409" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1596636196637" />
     <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1596635856093">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
