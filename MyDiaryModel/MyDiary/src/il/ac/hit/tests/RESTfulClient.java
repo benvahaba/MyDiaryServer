@@ -31,7 +31,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/api/user/new");
+                URL url = new URL("http://localhost:8080/mydiary/api/user/new");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -88,7 +88,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/api/user/verify");
+                URL url = new URL("http://localhost:8080/mydiary/api/user/verify");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -145,7 +145,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/api/user/delete");
+                URL url = new URL("http://localhost:8080/mydiary/api/user/delete");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -227,7 +227,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/api/event/new");
+                URL url = new URL("http://localhost:8080/mydiary/api/event/new");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -284,7 +284,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/api/user/delete");
+                URL url = new URL("http://localhost:8080/mydiary/api/user/delete");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -336,7 +336,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/api/event/delete/all");
+                URL url = new URL("http://localhost:8080/mydiary/api/event/delete/all");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -396,7 +396,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/api/event/get");
+                URL url = new URL("http://localhost:8080/mydiary/api/event/get");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -450,7 +450,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/api/event/get/all");
+                URL url = new URL("http://localhost:8080/mydiary/api/event/get/all");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -523,7 +523,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/api/event/update");
+                URL url = new URL("http://localhost:8080/mydiary/api/event/update");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");

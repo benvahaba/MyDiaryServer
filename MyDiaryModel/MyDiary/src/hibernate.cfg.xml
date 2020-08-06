@@ -8,10 +8,10 @@
 			com.mysql.jdbc.Driver
 		</property>
 		<property name="hibernate.connection.url">
-			jdbc:mysql://localhost:3306/life
+			jdbc:mysql://localhost:3306/mydiarydb
 		</property>
-		<property name="hibernate.connection.username">life</property>
-		<property name="hibernate.connection.password">michael</property>
+		<property name="hibernate.connection.username">mydiarydb</property>
+		<property name="hibernate.connection.password">12345</property>
 		<property name="show_sql">true</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>

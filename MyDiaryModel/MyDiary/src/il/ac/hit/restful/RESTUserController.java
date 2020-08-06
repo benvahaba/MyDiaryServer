@@ -13,6 +13,26 @@ import java.io.IOException;
 import java.io.InputStream;
 @Path("/user")
 public class RESTUserController{
+    /**
+     * This class purposes is to give a web client a service with certain constrains who's used
+     * to give access to a "Diary" based application on the Model side who acts as a controller.
+     * this class purpose is to handle the users!
+     *
+     * this class will help you gain access to a MySQL data base using hibernate and give functionalities like
+     * 1> Saving a new user by his email as @NotNull String and password as a @NotNull String
+     * 2> verify a user by his email as @NotNull String and password as a @NotNull String
+     * 3> delete a user and all of his events by getting the user's email as @NotNull String and password as a @NotNull String
+     *
+     * this glass URI is "http://localhost:8080/mydiary/api/user/{method path name}
+     *
+     * methods path names:
+     * new,verify,delete
+     *
+     * this class communicates with the client via input stream of Json strings.
+     *  fyi we use GSON jar v 2.8.6 as a tool to parse the json string
+     * and returns a json as a String back to a client and a HTTP Response status codes
+     * */
+
 
     @Path("/new")
     @POST
@@ -30,7 +50,7 @@ public class RESTUserController{
          *     400 error parsing the jsonObject or invalid user email or password
          *
          *     example:
-         *     URL: "http://localhost:8085/MyDiary/user/newuser
+         *     URL: "http://localhost:8080/mydiary/api/user/new
          *     POST body: JsonObject with Property1: "email", value:"vahababen@gmail.com"
          *                                Property2: "password", value: "a1b1"
          *
@@ -78,7 +98,7 @@ public class RESTUserController{
      *     503 service unavailable
      *
      *     example:
-     *     URL: "http://localhost:8085/MyDiary/user/verifyuser
+     *     URL: "http://localhost:8080/mydiary/api/user/verify
      *     POST body: JsonObject with Property1: "email", value:"vahababen@gmail.com"
      *                                Property2: "password", value: "a1b1"
      * */
@@ -119,9 +139,27 @@ public class RESTUserController{
     @Path("/delete")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-
-
     public Response deleteUser(InputStream inputStream)
+    /**
+     *
+     * delete a user and all of his events/
+     * the Client should send a JsonObject and in return will get an HTTP response status codes
+     * HTTP method "POST"
+     *     the jsonObjects includes two json elements: "email" and "password"
+     *
+     *     HTTP response status codes return:
+     *     200 (ok) in case the user exists with the same password
+     *     406 no such user in data base
+     *     400 error parsing the jsonObject or invalid user email or password
+     *     503 service unavailable
+     *
+     *     example:
+     *     URL: "http://localhost:8080/mydiary/api/user/delete
+     *     POST body: JsonObject with Property1: "email", value:"vahababen@gmail.com"
+     *                                Property2: "password", value: "a1b1"
+     * */
+
+
     {
         Response response=null;
         JsonObject json;
@@ -132,6 +170,7 @@ public class RESTUserController{
         {
             json = RESTUtils.inputStreamToJson(inputStream);
             user = RESTUtils.jsonToUserConverter(json);
+
 
         } catch (Exception e) {
             e.printStackTrace();

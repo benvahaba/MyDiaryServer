@@ -30,9 +30,10 @@ public class RESTEventController {
     /**
      * This class purposes is to give a web client a service with certain constrains who's used
      * to give access to a "Diary" based application on the Model side who acts as a controller.
+     * this class purpose is to handle the user's Events!
      *
      * this class will help you gain access to a MySQL data base using hibernate and give functionalities like
-     * 1> Saving a new user by his email as @NotNull String and password as a @NotNull String
+     * 1> Saving a new event and get the event id
      * 2> saving  or update events of a registered user. events that includes:
      *           email as a String (not Null)
      *           title as a String (not Null)
@@ -45,7 +46,7 @@ public class RESTEventController {
      * while verifying the user and the event's email
      * etc.
      *
-     * this glass URI is "http://localhost:8080/MyDiary/api/user/{method path name}
+     * this glass URI is "http://localhost:8080/mydiary/api/event/{method path name}
      *
      * methods path names:
      * new,verify,delete,get,update
@@ -88,7 +89,7 @@ public class RESTEventController {
          *
          *
          *     HTTP response status codes return:
-         *     200 (ok) in case the user exists with the same password
+         *     200 (ok) in case the user exists with the same password and the new id in the response body
          *     401 unauthorized user
          *     400 error parsing the jsonObject or invalid user email or password
          *     503 service unavailable
@@ -146,7 +147,8 @@ public class RESTEventController {
          * Deleting Existing event or events.
          * the Client should send a JsonObject and in return will get an HTTP response status codes
          * HTTP method "POST"
-         *     the jsonObjects includes three json elements: "email" , "password" and an Event object as a JsonArray
+         *     the jsonObjects includes three json elements: "email" , "password" and a list of event id's as a JsonArray
+         *     with the keyword "eventsId"
          *
          *
          *     HTTP response status codes return:
@@ -156,10 +158,10 @@ public class RESTEventController {
          *     503 service unavailable
          *
          *     example:
-         *     URL: "http://localhost:8085/MyDiary/user/delete
+         *     URL: "http://localhost:8080/mydiary/api/user/delete
          *     POST body: JsonObject with Property1: "email", value:"vahababen@gmail.com"
          *                                Property2: "password", value: "a1b1"
-         *                                Property3: "eventId", "56"
+         *                                Property3: "eventsId", JsonArray of event's id's
          * */
         JsonObject json;
         User user;
@@ -217,7 +219,7 @@ public class RESTEventController {
      *     503 service unavailable
      *
      *     example:
-     *     URL: "http://localhost:8085/MyDiary/user/deleteevents
+     *     URL: "http://localhost:8080/mydiary/api/user/delete/all
      *     POST body: JsonObject with Property1: "email", value:"vahababen@gmail.com"
      *                                Property2: "password", value: "a1b1"
      * */
@@ -262,11 +264,12 @@ public class RESTEventController {
     {
         /**
          *
-         * get Existing event.
+         * get Existing event or events.
          * the Client should send a JsonObject and in return will get an HTTP response status codes
-         * this method will return the user's event in Data base as a json string
+         * this method will return the user's event/s in Data base as a json string
          * HTTP method "POST"
          *     the jsonObjects that in the Request body includes three json elements: "email" , "password" and "eventId"
+         *     while the eventId is a List of event's id's as a json array with the keyword "eventsId"
          *
          *
          *     HTTP response status codes return:
@@ -276,10 +279,10 @@ public class RESTEventController {
          *     503 service unavailable
          *
          *     example:
-         *     URL: "http://localhost:8085/MyDiary/user/getevent
+         *     URL: "http://localhost:8080/mydiary/api/user/get
          *     POST body: JsonObject with Property1: "email", value:"vahababen@gmail.com"
          *                                Property2: "password", value: "a1b1"
-         *                                Property3: "eventId", value: "56"
+         *                                Property3: "eventsId", JsonArray of event's id's
          *
          *     if the user is verified and the event is legit, the Response will include a jsonObject with a jsonArray
          *     as following:
@@ -363,7 +366,7 @@ public class RESTEventController {
          *     503 service unavailable
          *
          *     example:
-         *     URL: "http://localhost:8085/MyDiary/user/getevents
+         *     URL: "http://localhost:8080/mydiary/api/user/get/all
          *     POST body: JsonObject with Property1: "email", value:"vahababen@gmail.com"
          *                                Property2: "password", value: "a1b1"
          *
@@ -426,7 +429,7 @@ public class RESTEventController {
          * this method will return a response status code 200 (ok) if event was updated successfully
          *
          * HTTP method "POST"
-         *     the jsonObjects that in the Request body includes three json elements: "email", "password" and "eventId"
+         *     the jsonObjects that in the Request body includes three json elements: "email", "password" and "event"
          *
          *
          *     HTTP response status codes return:
@@ -436,7 +439,7 @@ public class RESTEventController {
          *     503 service unavailable
          *
          *     example:
-         *     URL: "http://localhost:8085/MyDiary/user/updateevent
+         *     URL: "http://localhost:8080/mydiary/api/user/update
          *     POST body: JsonObject with Property1: "email", value:"vahababen@gmail.com"
          *                                Property2: "password", value: "a1b1"
          *                                Property3 "event", value: JsonArray
