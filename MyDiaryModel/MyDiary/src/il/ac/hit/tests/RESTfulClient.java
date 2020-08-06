@@ -31,7 +31,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/user/newuser");
+                URL url = new URL("http://localhost:8080/MyDiary/api/user/new");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -68,65 +68,13 @@ public class RESTfulClient {
             System.out.println("\nError while calling MyDiary REST Service: "+tempRetString);
         }
     }
-
-  /*  public static void deleteUser() {
-        String string = "";
-        try {
-            String email="vahababen@gmail.com";
-            String password="a1b2";
-            String tempRetString="";
-
-            JsonObject jsonObject=new JsonObject();
-
-            jsonObject.add("email", JsonParser.parseString(email) );
-            jsonObject.add("password", JsonParser.parseString(password) );
-
-            System.out.println("our json: "+ jsonObject);
-
-
-            try {
-                URL url = new URL("http://localhost:8085/MyDiary/user/deleteuserandevents");
-                URLConnection connection = url.openConnection();
-                connection.setDoOutput(true);
-                connection.setRequestProperty("Content-Type", "application/json");
-                connection.setConnectTimeout(5000);
-                connection.setReadTimeout(5000);
-                OutputStreamWriter out = new OutputStreamWriter(connection.getOutputStream());
-                out.write(jsonObject.toString());
-                out.close();
-
-                BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-
-
-
-                String nextLine;
-                while ((nextLine =br.readLine())!=null)
-                {
-                    tempRetString+=nextLine;
-                }
-                System.out.println("\nMyDiary REST Service Invoked Successfully..\n output:"+ tempRetString+"\n");
-
-
-                br.close();
-
-            } catch (Exception e) {
-
-
-                System.out.println(e);
-                System.out.println("\nError while calling MyDiary REST Service: "+tempRetString);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-*/
     public static void userVerification()
     {
         String string = "";
         try {
             String email="vahababen@gmail.com";
             String password="a1b2";
+
             String tempRetString="";
 
             JsonObject jsonObject=new JsonObject();
@@ -137,8 +85,10 @@ public class RESTfulClient {
             System.out.println("our json: "+ jsonObject);
 
 
+
+
             try {
-                URL url = new URL("http://localhost:8080/MyDiary/user/verifyuser");
+                URL url = new URL("http://localhost:8080/MyDiary/api/user/verify");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -147,6 +97,8 @@ public class RESTfulClient {
                 OutputStreamWriter out = new OutputStreamWriter(connection.getOutputStream());
                 out.write(jsonObject.toString());
                 out.close();
+
+
 
                 BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
@@ -176,6 +128,60 @@ public class RESTfulClient {
 
 
     }
+
+      public static void deleteUser() {
+        String string = "";
+        try {
+            String email="vahababen@gmail.com";
+            String password="a1b2";
+            String tempRetString="";
+
+            JsonObject jsonObject=new JsonObject();
+
+            jsonObject.add("email", JsonParser.parseString(email) );
+            jsonObject.add("password", JsonParser.parseString(password) );
+
+            System.out.println("our json: "+ jsonObject);
+
+
+            try {
+                URL url = new URL("http://localhost:8080/MyDiary/api/user/delete");
+                URLConnection connection = url.openConnection();
+                connection.setDoOutput(true);
+                connection.setRequestProperty("Content-Type", "application/json");
+                connection.setConnectTimeout(5000);
+                connection.setReadTimeout(5000);
+                OutputStreamWriter out = new OutputStreamWriter(connection.getOutputStream());
+                out.write(jsonObject.toString());
+                out.close();
+
+                BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+
+
+                String nextLine;
+                while ((nextLine =br.readLine())!=null)
+                {
+                    tempRetString+=nextLine;
+                }
+                System.out.println("\nMyDiary REST Service Invoked Successfully..\n output:"+ tempRetString+"\n");
+
+
+                br.close();
+
+            } catch (Exception e) {
+
+
+                System.out.println(e);
+                System.out.println("\nError while calling MyDiary REST Service: "+tempRetString);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     public static void newEvent()
     {
@@ -221,7 +227,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8085/MyDiary/user/newevent");
+                URL url = new URL("http://localhost:8080/MyDiary/api/event/new");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -265,36 +271,20 @@ public class RESTfulClient {
             String password="a1b2";
             String tempRetString="";
 
-            JsonObject jsonObject=new JsonObject();
-
-            Event event=new Event(
-                    "vahababen@gmail.com"
-                    , 5L
-                    ,"party"
-                    ,"Tel Aviv"
-                    , Time.valueOf("23:00:00")
-                    , Time.valueOf("03:30:00")
-                    , Date.valueOf("2020-6-19")
-                    ,"gonna be great");
-
             JsonArray jsonArray=new JsonArray();
-            jsonArray.add(event.getEmail());
-            jsonArray.add(event.getId());
-            jsonArray.add(event.getTitle());
-            jsonArray.add(event.getLocation());
-            jsonArray.add(event.getStarts().toString());
-            jsonArray.add(event.getEnds().toString());
-            jsonArray.add(event.getDate().toString());
-            jsonArray.add(event.getNote());
+            jsonArray.add(4);
+
+            JsonObject jsonObject=new JsonObject();
+
 
             jsonObject.add("email", JsonParser.parseString(email) );
             jsonObject.add("password", JsonParser.parseString(password) );
-            jsonObject.add("event",jsonArray);
+            jsonObject.add("eventId",jsonArray);
 
 
 
             try {
-                URL url = new URL("http://localhost:8085/MyDiaryModel/user/deleteevent");
+                URL url = new URL("http://localhost:8080/MyDiary/api/user/delete");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -329,7 +319,7 @@ public class RESTfulClient {
             e.printStackTrace();
         }
     }
-    public static void deleteEvents()
+    public static void deleteAllUsersEvents()
     {
         String string = "";
         try {
@@ -337,17 +327,16 @@ public class RESTfulClient {
             String password="a1b2";
             String tempRetString="";
 
+
             JsonObject jsonObject=new JsonObject();
+
 
             jsonObject.add("email", JsonParser.parseString(email) );
             jsonObject.add("password", JsonParser.parseString(password) );
 
 
-            System.out.println("our json: "+ jsonObject);
-
-
             try {
-                URL url = new URL("http://localhost:8085/MyDiary/user/deleteevents");
+                URL url = new URL("http://localhost:8080/MyDiary/api/event/delete/all");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -383,7 +372,8 @@ public class RESTfulClient {
         }
     }
 
-    public static void getEvent()
+
+    public static void getEvents()
     {
         String string = "";
         try {
@@ -392,17 +382,21 @@ public class RESTfulClient {
             String tempRetString="";
 
             JsonObject jsonObject=new JsonObject();
+            JsonArray jsonArray=new JsonArray();
+            jsonArray.add(JsonParser.parseString("9"));
+            jsonArray.add(JsonParser.parseString("10"));
 
             jsonObject.add("email", JsonParser.parseString(email) );
             jsonObject.add("password", JsonParser.parseString(password) );
-            jsonObject.add("eventId",JsonParser.parseString("4"));
+            jsonObject.add("eventsId",jsonArray);
+
 
 
             System.out.println("our json: "+ jsonObject);
 
 
             try {
-                URL url = new URL("http://localhost:8085/MyDiary/user/getevent");
+                URL url = new URL("http://localhost:8080/MyDiary/api/event/get");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -437,7 +431,7 @@ public class RESTfulClient {
             e.printStackTrace();
         }
     }
-    public static void getEvents()
+    public static void getAllUsersEvents()
     {
         String string = "";
         try {
@@ -456,7 +450,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8085/MyDiary/user/getevents");
+                URL url = new URL("http://localhost:8080/MyDiary/api/event/get/all");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");
@@ -503,7 +497,25 @@ public class RESTfulClient {
 
             jsonObject.add("email", JsonParser.parseString(email) );
             jsonObject.add("password", JsonParser.parseString(password) );
-            jsonObject.add("eventId",JsonParser.parseString("4"));
+            Event event=new Event(
+                    "vahababen@gmail.com"
+                    , 10L
+                    ,"party"
+                    ,"Tel Aviv"
+                    , Time.valueOf("23:00:00")
+                    , Time.valueOf("03:30:00")
+                    , Date.valueOf("2020-6-19")
+                    ,"im not gonna like it");
+            JsonArray jsonArray=new JsonArray();
+            jsonArray.add(event.getEmail());
+            jsonArray.add(event.getId());
+            jsonArray.add(event.getTitle());
+            jsonArray.add(event.getLocation());
+            jsonArray.add(event.getStarts().toString());
+            jsonArray.add(event.getEnds().toString());
+            jsonArray.add(event.getDate().toString());
+            jsonArray.add(event.getNote());
+            jsonObject.add("event",jsonArray);
 
 
 
@@ -511,7 +523,7 @@ public class RESTfulClient {
 
 
             try {
-                URL url = new URL("http://localhost:8085/MyDiary/user/updateevent");
+                URL url = new URL("http://localhost:8080/MyDiary/api/event/update");
                 URLConnection connection = url.openConnection();
                 connection.setDoOutput(true);
                 connection.setRequestProperty("Content-Type", "application/json");

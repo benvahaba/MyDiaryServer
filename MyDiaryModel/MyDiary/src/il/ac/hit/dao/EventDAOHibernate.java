@@ -52,12 +52,13 @@ public class EventDAOHibernate implements IEventDAO {
 
 
     @Override
-    public void insertEvent(User user, Event event) throws DAOException {
+    public Long insertEvent(User user, Event event) throws DAOException {
         /**
          * 1> checks if the verified user email equals to the event user email
          * if they are equal, pushes it to the DataBase
          * if there is a problem with the DataBase/Hibernate we throw a new DAOExeption
          * if the emails dont match, throws a DAOException
+         * if all goes well, returns the new event id
          * */
 
 
@@ -70,6 +71,7 @@ public class EventDAOHibernate implements IEventDAO {
                 session.save(event);
                 session.getTransaction().commit();
                 event.setId((Long) session.getIdentifier(event));
+                return event.getId();
 
             } catch (HibernateException e) {
                 e.printStackTrace();

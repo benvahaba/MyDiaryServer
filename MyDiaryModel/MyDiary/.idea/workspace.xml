@@ -30,6 +30,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -56,14 +63,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Resources_lib_for_MyDiary_Model/jars_for_Hibernate_and_mysql/slf4j-log4j12-1.5.6.jar" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.userVerification">
+  <component name="RunManager" selected="JUnit.updateEvent">
     <configuration name="GlassFish 5.0.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.1" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/MyDiary/" />
+      <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
@@ -135,6 +148,102 @@
         </option>
       </method>
     </configuration>
+    <configuration name="addUserTest" type="JUnit" factoryName="JUnit">
+      <module name="MyDiaryModel" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="il.ac.hit.tests" />
+      <option name="MAIN_CLASS_NAME" value="il.ac.hit.tests.RESTfulClientTest" />
+      <option name="METHOD_NAME" value="addUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="deleteAllUsersEvents" type="JUnit" factoryName="JUnit">
+      <module name="MyDiaryModel" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="il.ac.hit.tests" />
+      <option name="MAIN_CLASS_NAME" value="il.ac.hit.tests.RESTfulClientTest" />
+      <option name="METHOD_NAME" value="deleteAllUsersEvents" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="deleteEvent" type="JUnit" factoryName="JUnit">
+      <module name="MyDiaryModel" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="il.ac.hit.tests" />
+      <option name="MAIN_CLASS_NAME" value="il.ac.hit.tests.RESTfulClientTest" />
+      <option name="METHOD_NAME" value="deleteEvent" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="deleteUser" type="JUnit" factoryName="JUnit">
+      <module name="MyDiaryModel" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="il.ac.hit.tests" />
+      <option name="MAIN_CLASS_NAME" value="il.ac.hit.tests.RESTfulClientTest" />
+      <option name="METHOD_NAME" value="deleteUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="getAllUsersEvents" type="JUnit" factoryName="JUnit">
+      <module name="MyDiaryModel" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="il.ac.hit.tests" />
+      <option name="MAIN_CLASS_NAME" value="il.ac.hit.tests.RESTfulClientTest" />
+      <option name="METHOD_NAME" value="getAllUsersEvents" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="getEvents" type="JUnit" factoryName="JUnit">
+      <module name="MyDiaryModel" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="il.ac.hit.tests" />
+      <option name="MAIN_CLASS_NAME" value="il.ac.hit.tests.RESTfulClientTest" />
+      <option name="METHOD_NAME" value="getEvents" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="newEvent" type="JUnit" factoryName="JUnit">
+      <module name="MyDiaryModel" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="il.ac.hit.tests" />
+      <option name="MAIN_CLASS_NAME" value="il.ac.hit.tests.RESTfulClientTest" />
+      <option name="METHOD_NAME" value="newEvent" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="updateEvent" type="JUnit" factoryName="JUnit">
+      <module name="MyDiaryModel" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="il.ac.hit.tests" />
+      <option name="MAIN_CLASS_NAME" value="il.ac.hit.tests.RESTfulClientTest" />
+      <option name="METHOD_NAME" value="updateEvent" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="userVerification" type="JUnit" factoryName="JUnit">
       <module name="MyDiaryModel" />
       <useClassPathOnly />
@@ -149,6 +258,14 @@
     </configuration>
     <list>
       <item itemvalue="GlassFish Server.GlassFish 5.0.1" />
+      <item itemvalue="JUnit.deleteAllUsersEvents" />
+      <item itemvalue="JUnit.addUserTest" />
+      <item itemvalue="JUnit.newEvent" />
+      <item itemvalue="JUnit.getEvents" />
+      <item itemvalue="JUnit.getAllUsersEvents" />
+      <item itemvalue="JUnit.updateEvent" />
+      <item itemvalue="JUnit.deleteEvent" />
+      <item itemvalue="JUnit.deleteUser" />
       <item itemvalue="JUnit.userVerification" />
     </list>
   </component>
@@ -160,7 +277,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1596636198433</updated>
-      <workItem from="1596636199563" duration="302000" />
+      <workItem from="1596636199563" duration="19132000" />
+      <workItem from="1596697715983" duration="1687000" />
     </task>
     <servers />
   </component>
@@ -177,27 +295,101 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="354" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596636501027">
+    <state x="1081" y="383" width="1092" height="1017" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596698341906">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="354" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1596636501027" />
-    <state x="1009" y="513" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596636483129">
+    <state x="1081" y="383" width="1092" height="1017" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1596698341906" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1596642622058">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1009" y="513" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1596636483129" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1596642622058" />
+    <state x="1009" y="513" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1596698326747">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1009" y="513" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1596698326747" />
     <state x="907" y="388" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1596636326220">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="907" y="388" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1596636326220" />
-    <state x="986" y="441" key="FileChooserDialogImpl" timestamp="1596636380082">
+    <state x="986" y="441" key="FileChooserDialogImpl" timestamp="1596638032177">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1596636380082" />
-    <state x="760" y="274" key="SettingsEditor" timestamp="1596636413539">
+    <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1596638032177" />
+    <state width="1741" height="401" key="GridCell.Tab.0.bottom" timestamp="1596699348319">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1596636413539" />
+    <state width="1741" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.0.center" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.0.left" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.0.right" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.1.bottom" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.1.center" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.1.left" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.1.right" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.2.bottom" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.2.center" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.2.left" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state width="1741" height="401" key="GridCell.Tab.2.right" timestamp="1596699348319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1596699348319" />
+    <state x="760" y="274" key="SettingsEditor" timestamp="1596640685758">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1596640685758" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/il/ac/hit/dao/EventDAOHibernate.java</url>
+          <line>275</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/il/ac/hit/restful/RESTEventController.java</url>
+          <line>300</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/il/ac/hit/restful/RESTEventController.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

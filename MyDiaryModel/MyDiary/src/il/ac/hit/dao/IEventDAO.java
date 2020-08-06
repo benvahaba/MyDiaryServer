@@ -14,7 +14,7 @@ public interface IEventDAO {
      *
      * */
 
-    void insertEvent(User user, Event event) throws DAOException;//done
+    Long insertEvent(User user, Event event) throws DAOException;//done
     void deleteEvent(User user, Event event) throws DAOException;//done
     void deleteEvents(User user, List<Event> eventsList) throws DAOException;//done
     Event getEvent(User user, long eventId) throws DAOException;//done

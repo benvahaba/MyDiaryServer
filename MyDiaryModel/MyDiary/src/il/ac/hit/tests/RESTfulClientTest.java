@@ -34,15 +34,6 @@ class RESTfulClientTest {
         RESTfulClient.deleteEvent();
     }
 
-    @Test
-    void deleteEvents() {
-        RESTfulClient.deleteEvents();
-    }
-
-    @Test
-    void getEvent() {
-        RESTfulClient.getEvent();
-    }
 
     @Test
     void getEvents() {
@@ -50,8 +41,24 @@ class RESTfulClientTest {
     }
 
     @Test
+    void getAllUsersEvents() {
+        RESTfulClient.getAllUsersEvents();
+    }
+
+    @Test
     void updateEvent() {
         RESTfulClient.UpdateEvent();
 
+    }
+
+    @Test
+    void deleteUser() {
+        RESTfulClient.deleteUser();
+    }
+
+
+    @Test
+    void deleteAllUsersEvents() {
+        RESTfulClient.deleteAllUsersEvents();
     }
 }
