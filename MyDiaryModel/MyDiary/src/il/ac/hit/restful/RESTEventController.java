@@ -49,7 +49,7 @@ public class RESTEventController {
      * this glass URI is "http://localhost:8080/mydiary/api/event/{method path name}
      *
      * methods path names:
-     * new,verify,delete,get,update
+     * new,verify,delete,get,update,get/all,delete/all
      *
      * this class communicates with the client via input stream of Json strings.
      *  fyi we use GSON jar v 2.8.6 as a tool to parse the json string
@@ -439,7 +439,7 @@ public class RESTEventController {
          *     503 service unavailable
          *
          *     example:
-         *     URL: "http://localhost:8080/mydiary/api/user/update
+         *     URL: "http://localhost:8080/mydiary/api/event/update
          *     POST body: JsonObject with Property1: "email", value:"vahababen@gmail.com"
          *                                Property2: "password", value: "a1b1"
          *                                Property3 "event", value: JsonArray
