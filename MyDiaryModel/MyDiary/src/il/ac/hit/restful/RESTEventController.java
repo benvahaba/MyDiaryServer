@@ -1,26 +1,19 @@
 package il.ac.hit.restful;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import il.ac.hit.dao.DAOException;
-import il.ac.hit.dao.EventDAOHibernate;
-import il.ac.hit.dao.IEventDAO;
+import il.ac.hit.DAO.DAOException;
+import il.ac.hit.DAO.EventDAOHibernate;
+import il.ac.hit.DAO.IEventDAO;
 import il.ac.hit.utils.Event;
 import il.ac.hit.utils.User;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.sql.Date;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 

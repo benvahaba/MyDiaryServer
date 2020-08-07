@@ -1,9 +1,9 @@
 package il.ac.hit.restful;
 
 import com.google.gson.JsonObject;
-import il.ac.hit.dao.DAOException;
-import il.ac.hit.dao.EventDAOHibernate;
-import il.ac.hit.dao.IEventDAO;
+import il.ac.hit.DAO.DAOException;
+import il.ac.hit.DAO.EventDAOHibernate;
+import il.ac.hit.DAO.IEventDAO;
 import il.ac.hit.utils.User;
 
 import javax.ws.rs.*;
