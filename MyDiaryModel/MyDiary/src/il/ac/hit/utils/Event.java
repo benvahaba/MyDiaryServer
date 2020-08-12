@@ -2,9 +2,12 @@ package il.ac.hit.utils;
 
 
 import com.sun.istack.internal.NotNull;
+import il.ac.hit.DAO.DAOException;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class Event {
@@ -15,8 +18,8 @@ public class Event {
     private String email;
     private String title;
     private String location;
-    private Time starts;
-    private Time ends;
+    private String starts;
+    private String ends;
     private Date date;
     private String note;
 
@@ -29,7 +32,7 @@ public class Event {
 
     }
 
-    public Event(@NotNull String email, Long id, @NotNull String title, String location, Time timeStart, Time timeEnd, Date date, String note) {
+    public Event(@NotNull String email, Long id, @NotNull String title, String location, String timeStart, String timeEnd, Date date, String note) throws DAOException {
         /**
          *  overloading Cto'r.
          *
@@ -72,23 +75,35 @@ public class Event {
         this.location = location;
     }
 
-    public Time getStarts() {
+    public String getStarts() {
         /** gets the event start time as java.sql.Time object */
         return starts;
     }
 
-    public void setStarts(Time starts) {
+    public void setStarts(String starts) throws DAOException {
+        /** sets the event start time as a String and check the format, throws a DAOException in case the time format is worng */
+        if(timeFormatCheck(starts)==false)
+        {
+            throw new DAOException("invalid Time format at:"+starts);
+
+        }
+
         /** sets the event start time as java.sql.Time object */
         this.starts = starts;
     }
 
-    public Time getEnds() {
+    public String getEnds() {
         /** gets the event end time as java.sql.Time object */
         return ends;
     }
 
-    public void setEnds(Time ends) {
-        /** gets the event end time as java.sql.Time object */
+    public void setEnds(String ends) throws DAOException {
+        /** sets the event end time as a String and check the format, throws a DAOException in case the time format is worng */
+        if(timeFormatCheck(starts)==false)
+        {
+            throw new DAOException("invalid Time format at:"+ends);
+
+        }
         this.ends = ends;
     }
 
@@ -146,6 +161,32 @@ public class Event {
         +" ID: "+getId()+" "
         +" Date: "+getDate().toString()+" "
         +" Note: "+note+" ";
+    }
+    private Boolean timeFormatCheck(String time) {
+
+        // Regex to check valid time in 24-hour format.
+        String regex = "([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]";
+
+        // Compile the ReGex
+        Pattern p = Pattern.compile(regex);
+
+        // If the time is empty
+        // return false
+        if (time == null) {
+            return false;
+        }
+
+        // Pattern class contains matcher() method
+        // to find matching between given time
+        // and regular expression.
+        Matcher m = p.matcher(time);
+
+        // Return if the time
+        // matched the ReGex
+        return m.matches();
+
+
+
     }
 }
 

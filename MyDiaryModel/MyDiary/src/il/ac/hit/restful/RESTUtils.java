@@ -3,6 +3,7 @@ package il.ac.hit.restful;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import il.ac.hit.DAO.DAOException;
 import il.ac.hit.utils.Event;
 import il.ac.hit.utils.User;
 
@@ -43,7 +44,7 @@ public class RESTUtils {
         return user;
 
     }
-    public static Event jsonToEventConverter(JsonObject jsonObject) throws IOException {
+    public static Event jsonToEventConverter(JsonObject jsonObject) throws IOException, DAOException {
 
         //throws IOException if incorrect input
 
@@ -57,8 +58,8 @@ public class RESTUtils {
                 jsonArray.get(1).getAsLong(),
                 jsonArray.get(2).getAsString(),
                 jsonArray.get(3).getAsString(),
-                Time.valueOf(jsonArray.get(4).getAsString()),
-                Time.valueOf(jsonArray.get(5).getAsString()),
+                jsonArray.get(4).getAsString(),
+                jsonArray.get(5).getAsString(),
                 Date.valueOf(jsonArray.get(6).getAsString()),
                 jsonArray.get(7).getAsString());
 

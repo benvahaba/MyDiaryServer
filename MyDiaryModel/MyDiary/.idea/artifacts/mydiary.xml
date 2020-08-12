@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="mydiary">
+    <output-path>$PROJECT_DIR$/out/artifacts/mydiary</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="MyDiaryModel" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="JUnit5.4" module-name="MyDiaryModel" />
+          <element id="library" level="project" name="JAX-RS-2.1.1" />
+          <element id="library" level="project" name="gson-2.8.6" />
+          <element id="library" level="project" name="antlr-2.7.6" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="MyDiaryModel/web/Web" />
+    </root>
+  </artifact>
+</component>

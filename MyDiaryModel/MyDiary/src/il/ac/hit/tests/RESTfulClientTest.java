@@ -13,11 +13,6 @@ class RESTfulClientTest {
 
     }
 
-/*    @Test
-    void deleteUser() {
-        RESTfulClient.deleteUser();
-    }*/
-
 
     @Test
     public void userVerification() {

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="gson-2.8.6">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Resources_lib_for_MyDiary_Model/Gson_json_jars/gson-2.8.6.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

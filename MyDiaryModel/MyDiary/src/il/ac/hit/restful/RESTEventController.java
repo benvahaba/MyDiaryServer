@@ -1,6 +1,7 @@
 package il.ac.hit.restful;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import il.ac.hit.DAO.DAOException;
 import il.ac.hit.DAO.EventDAOHibernate;
@@ -14,6 +15,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +34,8 @@ public class RESTEventController {
      *           email as a String (not Null)
      *           title as a String (not Null)
      *           the event location as a String
-     *           the event start time as a java.sql.Time object or a String that matches this Object type
-     *           the event end time as a java.sql.Time object or a String that matches this Object type
+     *           the event start time as a String object or a String that matches Time format "hh:MM:ss"
+     *           the event end time as a String object or a String that matches Time format "hh:MM:ss"
      *           an event ID that will be over overwritten by the DAO if its a new event
      *           the event Date as a java.sql.Date object or a String that matches this Object type
      *           and a Note as a String
@@ -58,7 +61,7 @@ public class RESTEventController {
 
 
 
-
+    Gson gson=new GsonBuilder().setDateFormat("dd-MM-yyyy").create();
 
     @POST
     @Path("new")
@@ -74,8 +77,8 @@ public class RESTEventController {
          *           email as a String (not Null)
          *           title as a String (not Null)
          *           the event location as a String
-         *           the event start time as a java.sql.Time object or a String that matches this Object type
-         *           the event end time as a java.sql.Time object or a String that matches this Object type
+         *           the event start time as a String object or a String that matches Time format "hh:MM:ss"
+         *           the event end time as a String object or a String that matches Time format "hh:MM:ss"
          *           an event ID that will be over overwritten by the DAO if its a new event
          *           the event Date as a java.sql.Date object or a String that matches this Object type
          *           and a Note as a String
@@ -107,7 +110,7 @@ public class RESTEventController {
             if(DAO.userVerification(user))
             {
                 Long eventID = DAO.insertEvent(user,event);
-                Gson gson=new Gson();
+
                 return Response.ok(gson.toJson(eventID)).build();//Success
             }
             else
@@ -282,8 +285,8 @@ public class RESTEventController {
          *           email as a String (not Null)
          *           title as a String (not Null)
          *           the event location as a String
-         *           the event start time as a java.sql.Time object or a String that matches this Object type
-         *           the event end time as a java.sql.Time object or a String that matches this Object type
+         *           the event start time as a String object or a String that matches Time format "hh:MM:ss"
+         *           the event end time as a String object or a String that matches Time format "hh:MM:ss"
          *           an event ID that will be over overwritten by the DAO if its a new event
          *           the event Date as a java.sql.Date object or a String that matches this Object type
          *           and a Note as a String
@@ -309,7 +312,7 @@ public class RESTEventController {
                  }
 
                  //TODO check
-                 Gson gson=new Gson();
+
 
                  return Response.ok(gson.toJson(eventsList)).build();
              }
@@ -368,8 +371,8 @@ public class RESTEventController {
          *           email as a String (not Null)
          *           title as a String (not Null)
          *           the event location as a String
-         *           the event start time as a java.sql.Time object or a String that matches this Object type
-         *           the event end time as a java.sql.Time object or a String that matches this Object type
+         *           the event start time as a String object or a String that matches Time format "hh:MM:ss"
+         *           the event end time as a String object or a String that matches Time format "hh:MM:ss"
          *           an event ID that will be over overwritten by the DAO if its a new event
          *           the event Date as a java.sql.Date object or a String that matches this Object type
          *           and a Note as a String
@@ -385,7 +388,6 @@ public class RESTEventController {
             if(DAO.userVerification(user))
             {
                 events = DAO.getEvents(user);
-                Gson gson=new Gson();
 
                 return Response.ok(gson.toJson(events)).build();
             }

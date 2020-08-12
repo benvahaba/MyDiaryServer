@@ -51,6 +51,8 @@ public class RESTfulClient {
                 System.out.println("\nMyDiary REST Service Invoked Successfully..\n output:"+ tempRetString+"\n");
 
 
+
+
                 br.close();
 
 
@@ -179,6 +181,7 @@ public class RESTfulClient {
 
     public static void newEvent()
     {
+
         String string = "";
         try {
             String email="vahababen@gmail.com";
@@ -187,25 +190,16 @@ public class RESTfulClient {
 
             JsonObject jsonObject=new JsonObject();
 
-            Event event=new Event(
-                    "vahababen@gmail.com"
-                    , 99L
-                    ,"party"
-                    ,"Tel Aviv"
-                    , Time.valueOf("23:00:00")
-                    , Time.valueOf("03:30:00")
-                    , Date.valueOf("2020-6-19")
-                    ,"gonna be great");
 
             JsonArray jsonArray=new JsonArray();
-            jsonArray.add(event.getEmail());
-            jsonArray.add(event.getId());
-            jsonArray.add(event.getTitle());
-            jsonArray.add(event.getLocation());
-            jsonArray.add(event.getStarts().toString());
-            jsonArray.add(event.getEnds().toString());
-            jsonArray.add(event.getDate().toString());
-            jsonArray.add(event.getNote());
+            jsonArray.add("vahababen@gmail.com");
+            jsonArray.add(99L);
+            jsonArray.add("party");
+            jsonArray.add("Tel Aviv");
+            jsonArray.add("01:00:00");
+            jsonArray.add("03:30:00");
+            jsonArray.add(Date.valueOf("2020-6-19").toString());
+            jsonArray.add("gonna be great");
 
 
 
@@ -455,6 +449,16 @@ public class RESTfulClient {
                 }
                 System.out.println("\nMyDiary REST Service Invoked Successfully..\n output event: "+ tempRetString+"\n");
 
+                JsonArray jsonArray = new Gson().fromJson(tempRetString, JsonArray.class);
+
+
+                for (JsonElement element: jsonArray)
+                {
+                    JsonObject obj = element.getAsJsonObject();
+                    Time time = Time.valueOf(obj.get("starts").getAsString());
+
+                }
+
 
                 br.close();
 
@@ -486,8 +490,8 @@ public class RESTfulClient {
                     , 10L
                     ,"party"
                     ,"Tel Aviv"
-                    , Time.valueOf("23:00:00")
-                    , Time.valueOf("03:30:00")
+                    , "23:00:00"
+                    , "03:30:00"
                     , Date.valueOf("2020-6-19")
                     ,"im not gonna like it");
             JsonArray jsonArray=new JsonArray();

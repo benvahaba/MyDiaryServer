@@ -48,5 +48,6 @@
     <orderEntry type="library" name="JAX-RS-2.1.1" level="project" />
     <orderEntry type="library" name="gson-2.8.6" level="project" />
     <orderEntry type="library" name="antlr-2.7.6" level="project" />
+    <orderEntry type="library" name="JAX-RS-2.1.1" level="project" />
   </component>
 </module>

@@ -54,8 +54,8 @@ public class DAOActivator {
                     , 99L
                     ,"party"
                     ,"Tel Aviv"
-                    , Time.valueOf("23:00:00")
-                    , Time.valueOf("03:30:00")
+                    , "23:00:00"
+                    , "03:30:00"
                     , Date.valueOf("2020-6-19")
                     ,"gonna be great");
 
